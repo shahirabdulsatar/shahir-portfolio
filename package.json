@@ -1,0 +1,26 @@
+{
+  "name": "shahir-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website showcasing iOS development skills and TradeLog project",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server $PORT",
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'No build process required for static site'"
+  },
+  "keywords": [
+    "portfolio",
+    "ios-developer",
+    "swift",
+    "swiftui",
+    "tradelog",
+    "mobile-development"
+  ],
+  "author": "Shahir Abdul Satar",
+  "license": "MIT",
+  "homepage": "https://github.com/shahirabdulsatar/shahir-portfolio",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shahirabdulsatar/shahir-portfolio.git"
+  }
+}
