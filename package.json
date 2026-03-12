@@ -4,9 +4,15 @@
   "description": "Professional portfolio website showcasing iOS development skills and TradeLog project",
   "main": "index.html",
   "scripts": {
-    "start": "python3 -m http.server $PORT",
-    "dev": "python3 -m http.server 8000",
-    "build": "echo 'No build process required for static site'"
+    "start": "npx http-server . -p $PORT",
+    "dev": "npx http-server . -p 8000",
+    "build": "echo 'Static site - no build required'"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=16"
   },
   "keywords": [
     "portfolio",
