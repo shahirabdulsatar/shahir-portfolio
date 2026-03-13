@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     initNavigation();
     initSmoothScrolling();
-    initScrollAnimations();
+    // initScrollAnimations(); // Disabled to prevent hiding content
     initProfileImageFallback();
 });
 
