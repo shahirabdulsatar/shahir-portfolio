@@ -114,16 +114,7 @@ function initScrollAnimations() {
                     });
                 }
 
-                // Special animation for feature items
-                if (entry.target.classList.contains('feature-item')) {
-                    const features = document.querySelectorAll('.feature-item');
-                    features.forEach((feature, index) => {
-                        setTimeout(() => {
-                            feature.style.opacity = '1';
-                            feature.style.transform = 'translateY(0)';
-                        }, index * 100);
-                    });
-                }
+                // Features display normally
             }
         });
     }, observerOptions);
@@ -133,14 +124,7 @@ function initScrollAnimations() {
         '.work-card, .timeline-item, .tradestack-content, .contact-method'
     );
 
-    // Separately handle feature items for proper animation
-    const featureItems = document.querySelectorAll('.feature-item');
-    featureItems.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(el);
-    });
+    // Feature items display normally without animation
 
     animateElements.forEach(el => {
         el.style.opacity = '0';
@@ -374,19 +358,7 @@ function createImageModal(imageSrc, imageAlt) {
 // Initialize screenshots when DOM is ready
 document.addEventListener('DOMContentLoaded', initScreenshots);
 
-// Ensure feature items are visible as fallback
-document.addEventListener('DOMContentLoaded', function() {
-    // Fallback to show features after 2 seconds if animation doesn't work
-    setTimeout(() => {
-        const featureItems = document.querySelectorAll('.feature-item');
-        featureItems.forEach(item => {
-            if (window.getComputedStyle(item).opacity === '0') {
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-            }
-        });
-    }, 2000);
-});
+// Features display normally without animation
 
 // Utility function for throttling
 function throttle(func, limit) {
