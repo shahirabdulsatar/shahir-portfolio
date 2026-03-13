@@ -275,85 +275,58 @@ body {
     line-height: 1.6;
 }
 
-/* tradestack Section */
+/* TradeStack Section */
 .tradestack-section {
     padding: 8rem 2rem;
     background: var(--bg-primary);
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: block !important;
 }
 
 .tradestack-container {
     max-width: 1200px;
     margin: 0 auto;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-.section-header {
     text-align: center;
-    margin-bottom: 4rem;
 }
 
-.section-header h2 {
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.section-header h3 {
+.tradestack-container h2 {
     font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-}
-
-.tradestack-content {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-.tradestack-info h4 {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 300;
     margin-bottom: 1rem;
     color: var(--text-primary);
 }
 
-.tradestack-info p {
+.tradestack-container h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+
+.project-description {
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     line-height: 1.7;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.tradestack-features {
-    margin-bottom: 2rem;
-    opacity: 1;
-    visibility: visible;
-}
-
-.tradestack-info, .tradestack-screenshots {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
-
-.tradestack-description, .tradestack-features, .tradestack-tech, .screenshots-container {
-    opacity: 1 !important;
-    visibility: visible !important;
+.project-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
 }
 
 .feature-item {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 1rem;
     color: var(--text-secondary);
 }
 
@@ -363,7 +336,11 @@ body {
     width: 20px;
 }
 
-.tradestack-tech h5 {
+.tech-stack {
+    margin-bottom: 3rem;
+}
+
+.tech-stack h5 {
     color: var(--text-primary);
     margin-bottom: 1rem;
     font-weight: 600;
@@ -373,38 +350,29 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    justify-content: center;
 }
 
-.tech-tag {
+.tech-tags span {
     background: var(--bg-secondary);
     color: var(--text-secondary);
     padding: 0.5rem 1rem;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
 }
 
-/* TradeStack Screenshots */
-.tradestack-screenshots {
+.project-screenshots {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 1rem;
-}
-
-.screenshots-container {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
+    gap: 2rem;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .screenshot-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .screenshot-item:hover {
