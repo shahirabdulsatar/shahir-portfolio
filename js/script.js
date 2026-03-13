@@ -235,9 +235,13 @@ function initParallax() {
 
     function updateParallax() {
         const scrolled = window.pageYOffset;
-        const parallaxElements = document.querySelectorAll('.hero-section, .what-section');
+        // Only target hero-section, exclude tradestack-section to prevent conflicts
+        const parallaxElements = document.querySelectorAll('.hero-section:not(.tradestack-section)');
 
         parallaxElements.forEach((element, index) => {
+            // Skip if element is within tradestack section
+            if (element.closest('.tradestack-section')) return;
+
             const speed = 0.1 + (index * 0.05);
             const yPos = -(scrolled * speed);
             element.style.transform = `translateY(${yPos}px)`;
@@ -257,7 +261,7 @@ function initParallax() {
 }
 
 // Initialize parallax on load
-document.addEventListener('DOMContentLoaded', initParallax);
+// document.addEventListener('DOMContentLoaded', initParallax); // Disabled to prevent transform conflicts
 
 // Screenshot gallery interactions
 function initScreenshots() {
