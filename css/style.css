@@ -275,13 +275,13 @@ body {
     line-height: 1.6;
 }
 
-/* TradeLog Section */
-.tradelog-section {
+/* tradestack Section */
+.tradestack-section {
     padding: 8rem 2rem;
     background: var(--bg-primary);
 }
 
-.tradelog-container {
+.tradestack-container {
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -306,27 +306,27 @@ body {
     color: var(--text-primary);
 }
 
-.tradelog-content {
+.tradestack-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
 }
 
-.tradelog-info h4 {
+.tradestack-info h4 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--text-primary);
 }
 
-.tradelog-info p {
+.tradestack-info p {
     color: var(--text-secondary);
     margin-bottom: 2rem;
     line-height: 1.7;
 }
 
-.tradelog-features {
+.tradestack-features {
     margin-bottom: 2rem;
 }
 
@@ -344,7 +344,7 @@ body {
     width: 20px;
 }
 
-.tradelog-tech h5 {
+.tradestack-tech h5 {
     color: var(--text-primary);
     margin-bottom: 1rem;
     font-weight: 600;
@@ -365,72 +365,120 @@ body {
     border: 1px solid var(--border-color);
 }
 
-/* Phone Mockup */
-.phone-mockup {
+/* TradeStack Screenshots */
+.tradestack-screenshots {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.screenshots-container {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
-.phone-screen {
-    width: 260px;
-    height: 520px;
-    background: #000;
-    border-radius: 25px;
-    padding: 8px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-.app-preview {
-    width: 100%;
-    height: 100%;
-    background: var(--bg-secondary);
-    border-radius: 18px;
-    overflow: hidden;
-}
-
-.preview-header {
-    padding: 1rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.status-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--text-primary);
-    font-size: 0.8rem;
-    margin-bottom: 1rem;
-}
-
-.status-icons {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.preview-header h6 {
-    color: var(--text-primary);
-    font-weight: 600;
-    text-align: center;
-}
-
-.preview-content {
-    padding: 2rem 1rem;
+.screenshot-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: calc(100% - 80px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.chart-placeholder {
-    text-align: center;
+.screenshot-item:hover {
+    transform: translateY(-10px);
+}
+
+.screenshot-item img {
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    border: 3px solid #333;
+    background: #000;
+}
+
+.screenshot-item:hover img {
+    box-shadow: 0 25px 50px rgba(255, 107, 53, 0.2);
+    border-color: rgba(255, 107, 53, 0.3);
+}
+
+.screenshot-caption {
+    margin-top: 1rem;
     color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    transition: color 0.3s ease;
 }
 
-.chart-placeholder i {
-    font-size: 3rem;
+.screenshot-item:hover .screenshot-caption {
     color: var(--accent-orange);
-    margin-bottom: 1rem;
+}
+
+/* Image Modal */
+.image-modal .modal-backdrop {
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+}
+
+.image-modal .modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-modal .modal-image {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 15px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--accent-orange);
+}
+
+.image-modal .modal-close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: var(--accent-orange);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+}
+
+.image-modal .modal-close:hover {
+    background: var(--accent-orange-hover);
+    transform: scale(1.1);
+}
+
+.image-modal .modal-caption {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    text-align: center;
 }
 
 /* Experience Section */
@@ -632,9 +680,18 @@ body {
         font-size: 2.5rem;
     }
 
-    .tradelog-content {
+    .tradestack-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+
+    .screenshots-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .screenshot-item img {
+        width: 250px;
     }
 
     .contact-methods {
@@ -658,7 +715,7 @@ body {
     .hero-section,
     .what-section,
     .work-section,
-    .tradelog-section,
+    .tradestack-section,
     .experience-section,
     .contact-section {
         padding: 4rem 1rem;
@@ -682,6 +739,14 @@ body {
 
     .nav-links {
         gap: 1rem;
+    }
+
+    .screenshots-container {
+        gap: 1.5rem;
+    }
+
+    .screenshot-item img {
+        width: 180px;
     }
 }
 

@@ -13,7 +13,7 @@ function initNavigation() {
 
     // Update active navigation link on scroll
     function updateActiveNavLink() {
-        const sections = ['home', 'about', 'work', 'tradelog', 'experience', 'contact'];
+        const sections = ['intro', 'companies', 'tradestack', 'contact'];
         const scrollPos = window.scrollY + 100;
 
         sections.forEach(sectionId => {
@@ -254,6 +254,105 @@ function initParallax() {
 
 // Initialize parallax on load
 document.addEventListener('DOMContentLoaded', initParallax);
+
+// Screenshot gallery interactions
+function initScreenshots() {
+    const screenshotItems = document.querySelectorAll('.screenshot-item');
+
+    screenshotItems.forEach((item, index) => {
+        item.addEventListener('mouseenter', function() {
+            // Add staggered animation delay
+            this.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // Add click to enlarge functionality
+        const img = item.querySelector('img');
+        if (img) {
+            img.addEventListener('click', function() {
+                createImageModal(this.src, this.alt);
+            });
+
+            // Add cursor pointer to indicate clickable
+            img.style.cursor = 'pointer';
+        }
+    });
+}
+
+// Create image modal for enlarged view
+function createImageModal(imageSrc, imageAlt) {
+    // Remove existing modal if present
+    const existingModal = document.querySelector('.image-modal');
+    if (existingModal) {
+        existingModal.remove();
+    }
+
+    // Create modal
+    const modal = document.createElement('div');
+    modal.className = 'image-modal';
+    modal.innerHTML = `
+        <div class="modal-backdrop">
+            <div class="modal-content">
+                <img src="${imageSrc}" alt="${imageAlt}" class="modal-image">
+                <button class="modal-close">&times;</button>
+                <div class="modal-caption">${imageAlt}</div>
+            </div>
+        </div>
+    `;
+
+    // Add modal styles
+    modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    `;
+
+    // Add to DOM
+    document.body.appendChild(modal);
+
+    // Animate in
+    setTimeout(() => {
+        modal.style.opacity = '1';
+    }, 10);
+
+    // Close functionality
+    const closeBtn = modal.querySelector('.modal-close');
+    const backdrop = modal.querySelector('.modal-backdrop');
+
+    function closeModal() {
+        modal.style.opacity = '0';
+        setTimeout(() => {
+            if (modal.parentNode) {
+                modal.parentNode.removeChild(modal);
+            }
+        }, 300);
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', function(e) {
+        if (e.target === backdrop) {
+            closeModal();
+        }
+    });
+
+    // ESC key to close
+    document.addEventListener('keydown', function handleEsc(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+            document.removeEventListener('keydown', handleEsc);
+        }
+    });
+}
+
+// Initialize screenshots when DOM is ready
+document.addEventListener('DOMContentLoaded', initScreenshots);
 
 // Utility function for throttling
 function throttle(func, limit) {
