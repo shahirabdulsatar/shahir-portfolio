@@ -311,6 +311,8 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    opacity: 1;
+    visibility: visible;
 }
 
 .tradestack-info h4 {
@@ -328,6 +330,13 @@ body {
 
 .tradestack-features {
     margin-bottom: 2rem;
+    opacity: 1;
+    visibility: visible;
+}
+
+.tradestack-info, .tradestack-screenshots {
+    opacity: 1;
+    visibility: visible;
 }
 
 .feature-item {

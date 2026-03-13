@@ -119,9 +119,9 @@ function initScrollAnimations() {
         });
     }, observerOptions);
 
-    // Observe elements for animation
+    // Observe elements for animation (excluding tradestack-content)
     const animateElements = document.querySelectorAll(
-        '.work-card, .timeline-item, .tradestack-content, .contact-method'
+        '.work-card, .timeline-item, .contact-method'
     );
 
     // Feature items display normally without animation
