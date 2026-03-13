@@ -279,11 +279,16 @@ body {
 .tradestack-section {
     padding: 8rem 2rem;
     background: var(--bg-primary);
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
 }
 
 .tradestack-container {
     max-width: 1200px;
     margin: 0 auto;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .section-header {
@@ -307,12 +312,12 @@ body {
 }
 
 .tradestack-content {
-    display: grid;
+    display: grid !important;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .tradestack-info h4 {
@@ -335,8 +340,13 @@ body {
 }
 
 .tradestack-info, .tradestack-screenshots {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.tradestack-description, .tradestack-features, .tradestack-tech, .screenshots-container {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .feature-item {
