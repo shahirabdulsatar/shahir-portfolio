@@ -328,6 +328,15 @@ body {
 
 .tradestack-features {
     margin-bottom: 2rem;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Ensure features are visible even without JavaScript */
+.no-js .feature-item,
+noscript .feature-item {
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 .feature-item {
@@ -336,6 +345,9 @@ body {
     gap: 1rem;
     margin-bottom: 1rem;
     color: var(--text-secondary);
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
 }
 
 .feature-item i {
